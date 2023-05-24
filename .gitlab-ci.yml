@@ -6,7 +6,7 @@ build_job:
   stage: build  # the build process will only be started by git tag commits
   script:
     - apt-get update
-    - apt-get install -y dotnet-sdk-6.0
+    - apt-get install -y aspnetcore-runtime-6.0
     - dotnet restore
 #   artifacts:
 #     expire_in: 1 week  # save gitlab server space, we copy the files we need to deploy folder later on
