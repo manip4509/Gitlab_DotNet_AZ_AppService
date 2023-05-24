@@ -13,11 +13,8 @@ build_job:
     - dotnet build --no-restore
     - 'dotnet publish ./ -c Release -o ./bin /clp:ErrorsOnly' 
 
-  after_script:
-    - Invoke-Expression "& '$7z' a .\artifacts\drop.zip .\bin\* '-xr!.exe' '-xr!.pdb' '-xr!*.Development.json'"
-
 
   artifacts:
     expire_in: 1 week  # save gitlab server space, we copy the files we need to deploy folder later on
     paths:
-      - ./**/*.zip
+      - ./**/*.dll
