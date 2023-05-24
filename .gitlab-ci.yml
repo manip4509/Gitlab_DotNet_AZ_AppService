@@ -5,6 +5,7 @@ stages:
 build_job:
   stage: build  # the build process will only be started by git tag commits
   script:
+    - apt-get update
     - apt-get install -y dotnet-sdk-6.0
     - dotnet restore
 #   artifacts:
