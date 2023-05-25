@@ -28,6 +28,6 @@ deploy_job:
     - 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET --tenant $AZURE_TENANT_ID'
     - 'az account set --subscription $AZURE_SUBSCRIPTION_ID'
   script:
-    - 'az webapp deployment source config-zip --resource-group $AZURE_RESOURCE_GROUP --name $AZURE_WEBAPP_NAME --src artifacts.zip'
+    - 'az webapp deployment --cleam true --resource-group $AZURE_RESOURCE_GROUP --name $AZURE_WEBAPP_NAME --src-path artifacts.zip'
 
 
