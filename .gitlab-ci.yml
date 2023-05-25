@@ -17,7 +17,7 @@ build_job:
   artifacts:
     expire_in: 1 week  # save gitlab server space, we copy the files we need to deploy folder later on
     paths:
-      - ./bin
+      - ./bin/
 
 deploy_job:
   image: mcr.microsoft.com/azure-cli
@@ -32,7 +32,8 @@ deploy_job:
   script:
     - 'cd bin'
     - 'ls'
-    # - az webapp deployment source config-zip --resource-group $AZURE_RESOURCE_GROUP --name $AZURE_WEBAPP_NAME --src ./bin/artifacts.zip
+    - az webapp deployment source config-zip --resource-group $AZURE_RESOURCE_GROUP --name $AZURE_WEBAPP_NAME --src ./bin/
+    
     # - 'az webapp deployment --resource-group $AZURE_RESOURCE_GROUP --name $AZURE_WEBAPP_NAME --src-path artifacts.zip'
 
 
