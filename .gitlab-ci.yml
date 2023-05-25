@@ -25,8 +25,8 @@ deploy_job:
   dependencies:
     - build_job
   before_script:
-    - 'cd ./bin'
-    - 'zip -r .artifacts.zip .'
+    - 'ls'
+    - 'zip -r ./artifacts.zip .'
     - 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET --tenant $AZURE_TENANT_ID'
     - 'az account set --subscription $AZURE_SUBSCRIPTION_ID'
     
