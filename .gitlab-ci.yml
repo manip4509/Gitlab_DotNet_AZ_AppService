@@ -33,7 +33,7 @@ deploy_job:
   script:
     - 'cd bin'
     - 'ls'
-    - az webapp deployment source config-zip --resource-group $AZURE_RESOURCE_GROUP --name $AZURE_WEBAPP_NAME --src ./bin/artifacts.zip
+    - az webapp deployment source config-zip --resource-group $AZURE_RESOURCE_GROUP --name $AZURE_WEBAPP_NAME --src ./artifacts.zip
     
     # - 'az webapp deployment --resource-group $AZURE_RESOURCE_GROUP --name $AZURE_WEBAPP_NAME --src-path artifacts.zip'
 
